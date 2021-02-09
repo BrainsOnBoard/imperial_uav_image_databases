@@ -31,7 +31,7 @@ def process_file(filepath):
     print('Processing ' + bag_name)
 
     # create a new directory
-    folder = bag_name.rsplit('.', 1)[0]
+    folder = os.path.join('datasets', bag_name.rsplit('.', 1)[0])
 
     try:  # else already exists
         os.makedirs(folder)
