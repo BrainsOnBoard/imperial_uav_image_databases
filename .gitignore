@@ -1,5 +1,6 @@
 *.bag
 datasets/unwrapped_*
+**/.navbench_cache
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
