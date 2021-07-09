@@ -1,6 +1,7 @@
 *.bag
 datasets/unwrapped_*
 **/.navbench_cache
+quiver_bob_summer2021.svg
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
