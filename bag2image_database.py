@@ -55,7 +55,7 @@ metadata:
     # Extract drone's poses with timestamps from bag for later interpolation
     times = []
     poses = np.empty((0, 6))
-    for _, msg, t in bag.read_messages(['/vicon/dd/odom', '/vicon/f450/odom']):
+    for _, msg, t in bag.read_messages(['/spider/vrpn_client/estimated_odometry', '/vicon/dd/odom', '/vicon/f450/odom']):
         times.append(t.to_sec())
         pose = msg.pose.pose
         pose_arr = [pose.position.x, pose.position.y, pose.position.z,
@@ -69,7 +69,7 @@ metadata:
                 'Pitch [degrees], Roll [degrees], Filename\n')
 
         count = 0
-        for _, msg, t in bag.read_messages('/kodak/image_raw'):
+        for _, msg, t in bag.read_messages(['/camera/image_raw', '/kodak/image_raw']):
             time = t.to_sec()
 
             # Find the first pose reading after this frame or quit
